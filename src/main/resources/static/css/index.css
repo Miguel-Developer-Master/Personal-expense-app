@@ -1,0 +1,110 @@
+html {
+    background-color: #C0C0C0;
+    color: #101010;
+}
+
+body {
+    margin: 0;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #A0A0A0;
+    width: 100%;
+}
+
+.starting {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+}
+
+#about-us {
+    border: none;
+    background: none;
+    outline: none;
+    color: inherit;
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
+}
+
+#main-title {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: center;
+}
+
+#money-expenses {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 10px;
+    margin: 10px;
+}
+
+#dashboard {
+    margin: 5px;
+    padding: 5px;
+    border: #404040 1px solid;
+    border-radius: 25px;
+}
+
+#month {
+    justify-self: start;
+}
+
+#spent-money-div {
+    justify-self: center;
+}
+
+#expenses-div {
+    justify-self: end;
+}
+
+#categories {
+    margin: 5px;
+    padding: 15px;
+    border: #404040 1px solid;
+    border-radius: 10px;
+}
+
+#categories-utils {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    justify-content: space-between;
+}
+
+#add-category {
+    border: none;
+    background: none;
+    outline: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+#all-expenses {
+    border: #404040 1px solid;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 15px;
+}
+
+#add-expense {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    justify-content: space-between;
+}
+
+#add-expense-button {
+    border: none;
+    background: none;
+    outline: none;
+    color: inherit;
+    cursor: pointer;
+}
+
