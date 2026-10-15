@@ -10,4 +10,14 @@ public class PageController {
     public String home() {
         return "index";
     }
+
+    @GetMapping("/creating-category")
+    public String creatingCategory() {
+        return "category";
+    }
+
+    @GetMapping("/creating-expense")
+    public String creatingExpense() {
+        return "expense";
+    }
 }
