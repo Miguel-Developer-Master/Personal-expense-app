@@ -108,3 +108,21 @@ footer {
     cursor: pointer;
 }
 
+.categories {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.category-info {
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.category-actions {
+    display: flex;
+    align-content: center;
+    gap: 8px;
+}
