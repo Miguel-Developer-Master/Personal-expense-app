@@ -1,9 +1,13 @@
 package com.miguel.expensetracker.Controllers;
 
+import com.miguel.expensetracker.models.Category;
 import com.miguel.expensetracker.repositories.CategoryRepository;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 public class Categories {
@@ -17,5 +21,10 @@ public class Categories {
     @PostMapping("/categories/create/{categoryName}")
     public void createCategory(@PathVariable String categoryName) {
         categoryRepository.createCategory(categoryName);
+    }
+
+    @GetMapping("/categories/get-all")
+    public List<Category> getCategories() {
+        return categoryRepository.getAllCategories();
     }
 }
