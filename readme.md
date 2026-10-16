@@ -1,0 +1,1 @@
+In development, when the project gets finished, i'll make a good readme teaching how to run the project.
