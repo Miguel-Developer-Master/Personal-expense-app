@@ -1,0 +1,51 @@
+html {
+    background-color: #5F7044;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    color: #D0D6B3;
+}
+
+#expense-form {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    border: 1px solid #BDC299;
+    border-radius: 10px;
+    padding: 1%;
+    width: 30%;
+    height: 100%;
+    margin: auto;
+}
+
+.formulary {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+label {
+    font-size: 10px;
+    color: #F7F7F7;
+}
+
+input, select, button{
+    background-color: #BDC299;
+    border: none;
+    border-radius: 05px;
+    min-height: 40px;
+    padding: 8px 12px;
+    font-size: 16px;
+}
+
+button {
+    transform: scale(1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background-color: #AAAE7F;
+}

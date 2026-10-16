@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/expense.css">
+    <meta charset="UTF-8">
+    <title>Create a new Expense</title>
+</head>
+<body>
+    <header>
+        <h1>Create a new Expense</h1>
+    </header>
+
+    <main>
+        <form id="expense-form">
+
+            <div class="formulary">
+                <label for="expense-name">Expense name</label>
+                <input type="text" id="expense-name" placeholder="Lunch, bus ticket, etc" required>
+            </div>
+
+            <div class="formulary">
+                <label for="expense-amount">Amount</label>
+                <input type="text" id="expense-amount" placeholder="67, 6.7, etc" required>
+            </div>
+
+            <div class="formulary">
+                <label for="expense-date">Expense date</label>
+                <input type="date" id="expense-date" required>
+            </div>
+
+            <div class="formulary">
+                <label for="expense-category">Expense category</label>
+                <select id="expense-category" required></select>
+            </div>
+
+            <div class="formulary">
+                <label for="expense-description">Expense description (optional)</label>
+                <input id="expense-description" required>
+            </div>
+
+            <button>Create</button>
+        </form>
+    </main>
+    <script type="module" src="/js/expense.js"></script>
+</body>
+</html>
