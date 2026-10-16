@@ -1,4 +1,4 @@
-package com.miguel.expensetracker.Controllers;
+package com.miguel.expensetracker.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
