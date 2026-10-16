@@ -1,0 +1,39 @@
+html {
+    background-color: #252525;
+    color: #A0A0A0;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+fieldset {
+    display: grid;
+    margin: auto;
+    width: 50%;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+#finish-form {
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin-top: 5%;
+    background-color: #606060;
+    transform: scale(1);
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+    color: #252525;
+}
+
+#finish-form:hover {
+    background-color: #A0A0A0;
+    color: #303030;
+    transform: scale(1.01);
+}
+
+.invalid-category-name::placeholder {
+    color: red;
+}
