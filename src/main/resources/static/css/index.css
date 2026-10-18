@@ -108,7 +108,7 @@ footer {
     cursor: pointer;
 }
 
-.categories {
+.categories-divs {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -125,4 +125,65 @@ footer {
     display: flex;
     align-content: center;
     gap: 8px;
+}
+
+.buttons {
+    outline: none;
+    border: none;
+    background: none;
+}
+
+#summary-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#expenses-table {
+    margin: 10px 10px 10px 10px;
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0 12px;
+}
+
+#expenses-table th,
+#expenses-table td {
+    text-align: left;
+}
+
+#expenses-table .expense-actions,
+#expenses-table .header-expense-actions {
+    text-align: right;
+}
+
+#expenses-table .expense-actions {
+    white-space: nowrap;
+}
+
+/* columns width settings */
+
+#expenses-table th:nth-child(1) {
+    width: 25%;
+}
+
+#expenses-table td:nth-child(2) {
+    width: 25%;
+}
+
+#expenses-table th:nth-child(3) {
+    width: 25%;
+}
+
+#expenses-table td:nth-child(4) {
+    width: 25%;
+}
+
+#expenses-table th {
+    padding: 12px;
+    padding-bottom: 24px;
+}
+
+#expenses-table td {
+    padding: 12px;
 }
