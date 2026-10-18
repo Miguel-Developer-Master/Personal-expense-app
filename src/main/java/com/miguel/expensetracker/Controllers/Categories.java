@@ -27,4 +27,14 @@ public class Categories {
     public List<Category> getCategories() {
         return categoryRepository.getAllCategories();
     }
+
+    @GetMapping("/categories/get-expenses-by-category-id/{category_id}")
+    public Long getExpensesByCategoryId(@PathVariable Long category_id) {
+        return  categoryRepository.getExpensesByCategoryId(category_id);
+    }
+
+    @GetMapping("/categories/get-category-name-with-category-id/{id}")
+    public String getCategoryName(@PathVariable Long id) {
+        return categoryRepository.getCategoryNameWithCategoryId(id);
+    }
 }

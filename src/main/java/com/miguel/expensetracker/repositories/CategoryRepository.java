@@ -4,6 +4,7 @@ import com.miguel.expensetracker.models.Category;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Repository
@@ -34,5 +35,19 @@ public class CategoryRepository {
         return categories;
     }
 
+    public Long getExpensesByCategoryId(long categoryId) {
+        String SQL = "SELECT COUNT(*) FROM expenses WHERE category_id = ?";
 
+        Long count = jdbcTemplate.queryForObject(SQL, Long.class, categoryId);
+
+        return count;
+    }
+
+    public String getCategoryNameWithCategoryId(Long categoryId) {
+        String SQL = "SELECT name FROM categories WHERE id = ?";
+
+        String name = jdbcTemplate.queryForObject(SQL, String.class, categoryId);
+
+        return name;
+    }
 }
