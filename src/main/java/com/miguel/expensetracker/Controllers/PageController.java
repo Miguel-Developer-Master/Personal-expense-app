@@ -20,4 +20,14 @@ public class PageController {
     public String creatingExpense() {
         return "expense";
     }
+
+    @GetMapping("/editing-expense")
+    public String editingExpense() {
+        return "editingExpense";
+    }
+
+    @GetMapping("/editing-category")
+    public String editingCategory() {
+        return "editingCategory";
+    }
 }
