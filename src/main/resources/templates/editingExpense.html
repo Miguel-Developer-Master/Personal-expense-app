@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/editingExpense.css">
+    <meta charset="UTF-8">
+    <title>Edit an expense</title>
+</head>
+<body>
+    <main>
+
+        <header>
+            <h1>Edit an expense</h1>
+        </header>
+
+        <section id="main-section">
+            <form id="edit-expense-form">
+
+                <fieldset>
+                    <legend>expense name</legend>
+                    <input type="text" id="expense-name" placeholder="expense name" required>
+                </fieldset>
+
+                <fieldset>
+                    <legend>expense amount</legend>
+                    <input type="text" id="expense-amount" placeholder="expense amount (number)" required>
+                </fieldset>
+
+                <fieldset>
+                    <legend>expense date</legend>
+                    <input type="date" id="expense-date" required>
+                </fieldset>
+
+                <fieldset>
+                    <legend>expense description</legend>
+                    <input type="text" id="expense-description" placeholder="expense description">
+                </fieldset>
+
+                <fieldset>
+                    <select id="expense-category"></select>
+                </fieldset>
+
+                <button id="submit-button">Submit</button>
+            </form>
+        </section>
+    </main>
+    <script type="module" src="/js/editingExpense.js"></script>
+</body>
+</html>

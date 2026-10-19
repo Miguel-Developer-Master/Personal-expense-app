@@ -1,0 +1,66 @@
+html {
+    background-color: #000000;
+    color: #FCA311;
+}
+
+header {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+header h1 {
+    font-size: 50px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid #14213D;
+    padding: 1%;
+    width: 30%;
+    height: 40em;
+    margin: auto;
+    border-radius: 10px;
+}
+
+fieldset {
+    border: 1px solid #14213D;
+    border-radius: 10px;
+    height: 6em;
+    display: flex;
+    align-items: center;
+}
+
+fieldset input, fieldset select {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: none;
+    color: inherit;
+    font-size: 100%;
+}
+
+fieldset legend {
+    margin: auto;
+}
+
+#submit-button {
+    margin: auto;
+    border: none;
+    border-radius: 10px;
+    width: 90%;
+    background-color: #E5E5E5;
+    color: #000000;
+    height: 2em;
+    transform: scale(1);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+#submit-button:hover {
+    transform: scale(1.1);
+    background-color: #14213D;
+    color: #FCA311;
+}
