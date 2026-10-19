@@ -82,4 +82,42 @@ public class ExpenseRepository {
 
         return expenses;
     }
+
+    public void deleteExpenseById(Long id) {
+        String SQL = "DELETE FROM expenses WHERE id = ?";
+        jdbcTemplate.update(SQL, id);
+    }
+
+    public Expense getEditExpenseById(Long id) {
+        String SQL =  "SELECT * FROM expenses WHERE id = ?";
+        Expense expense = jdbcTemplate.queryForObject(SQL, (result, rowNum) -> {
+            Expense newExpense = new Expense();
+
+            newExpense.id = result.getLong("id");
+            newExpense.title = result.getString("title");
+            newExpense.amount = result.getBigDecimal("amount");
+            newExpense.description = result.getString("description");
+            newExpense.expense_data = result.getObject("expense_data", LocalDate.class);
+            newExpense.category_id = result.getLong("category_id");
+
+            return newExpense;
+        }, id);
+
+        return expense;
+    }
+
+    public void updateExpenseById(Expense expense) {
+        String SQL = """
+                UPDATE expenses
+                SET
+                title = ?,
+                amount = ?,
+                description = ?,
+                expense_data = ?,
+                category_id = ?
+                WHERE id = ?
+        """;
+
+        jdbcTemplate.update(SQL, expense.title, expense.amount, expense.description, expense.expense_data, expense.category_id, expense.id);
+    }
 }

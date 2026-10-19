@@ -3,10 +3,7 @@ package com.miguel.expensetracker.Controllers;
 import com.miguel.expensetracker.models.Expense;
 import com.miguel.expensetracker.models.ReceiveExpense;
 import com.miguel.expensetracker.repositories.ExpenseRepository;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -24,8 +21,8 @@ public class Expenses {
         expenseRepository.createExpense(expense);
     }
 
-    @GetMapping("/expenses/get-category-by-expense-id")
-    public Long getCategoryIdByExpenseId(long expense_id) {
+    @GetMapping("/expenses/get-category-by-expense-id/{expense_id}")
+    public Long getCategoryIdByExpenseId(@PathVariable Long expense_id) {
         return expenseRepository.getCategoryIdByExpenseId(expense_id);
     }
 
@@ -52,5 +49,20 @@ public class Expenses {
     @GetMapping("/expenses/get-all-expenses")
     public List<Expense> getAllExpenses() {
         return expenseRepository.getAllExpenses();
+    }
+
+    @DeleteMapping("/expenses/delete-expense-by-id/{id}")
+    public void deleteExpenseById(@PathVariable Long id) {
+        expenseRepository.deleteExpenseById(id);
+    }
+
+    @GetMapping("/expenses/get-edit-expense-by-id/{id}")
+    public Expense getEditExpenseById(@PathVariable Long id) {
+        return expenseRepository.getEditExpenseById(id);
+    }
+
+    @PutMapping("/expenses/update-expense-by-id")
+    public void updateExpenseById(@RequestBody Expense expense) {
+        expenseRepository.updateExpenseById(expense);
     }
 }
