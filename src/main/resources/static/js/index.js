@@ -1,4 +1,5 @@
 import {changePage} from './utils/changePage.js';
+import * as popUp from './utils/popUp.js';
 
 const createCategoryButton = document.querySelector("#add-category");
 const createExpenseButton = document.querySelector("#add-expense-button");
@@ -45,9 +46,11 @@ async function showCategoriesOnScreen() {
 
     //sorry for the comments in this section, the code is confusing then I made them to avoid misunderstandings
     for (const category of categories) {
+
         //div for each category
         const newDiv = document.createElement("div");
         newDiv.classList.add("categories-divs");
+        newDiv.id = category.id;
 
         // category info div
         const categoryInfoDiv = document.createElement("div");
@@ -90,6 +93,18 @@ async function showCategoriesOnScreen() {
         newDiv.append(categoryActionDiv);
 
         categoriesDiv.append(newDiv);
+
+        //making actions useful
+
+        categoryDeleteButton.addEventListener("click", (event) => {
+            const categoryId = event.target.closest(".categories-divs").id;
+            popUp.deleteCategory(categoryId);
+        });
+
+        categoryEditButton.addEventListener("click", (event) => {
+            const categoryId = event.target.closest(".categories-divs").id;
+            changePage(`editing-category?id=${categoryId}`);
+        });
     }
 
 }
@@ -109,6 +124,8 @@ async function showExpensesOnScreen() {
 
         //cell that expenses will be
         const newCell = document.createElement("tr");
+        newCell.classList.add("expenses-table-row");
+        newCell.id = expense.id;
 
         //getting category name based on category id
         const response = await fetch(`/categories/get-category-name-with-category-id/${expense.category_id}`);
@@ -151,7 +168,29 @@ async function showExpensesOnScreen() {
 
 
         tableBody.append(newCell);
+
+        //making buttons work
+        expenseDeleteButton.addEventListener("click", (event) => {
+            const expenseId = event.target.closest(".expenses-table-row").id;
+            popUp.deleteExpense(expenseId);
+        });
+
+        expenseEditButton.addEventListener("click", (event) => {
+            const expenseId = event.target.closest(".expenses-table-row").id;
+            changePage(`editing-expense?id=${expenseId}`);
+        })
     }
 }
 
 await showExpensesOnScreen();
+
+//making about ume button work
+const aboutUsButton = document.querySelector("#about-me");
+const footer = document.querySelector("footer");
+
+aboutUsButton.addEventListener("click", () => {
+    footer.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+});
