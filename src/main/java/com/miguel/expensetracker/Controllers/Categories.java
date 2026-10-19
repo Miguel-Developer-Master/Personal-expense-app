@@ -2,10 +2,7 @@ package com.miguel.expensetracker.Controllers;
 
 import com.miguel.expensetracker.models.Category;
 import com.miguel.expensetracker.repositories.CategoryRepository;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -36,5 +33,15 @@ public class Categories {
     @GetMapping("/categories/get-category-name-with-category-id/{id}")
     public String getCategoryName(@PathVariable Long id) {
         return categoryRepository.getCategoryNameWithCategoryId(id);
+    }
+
+    @DeleteMapping("/categories/delete-category-and-expenses-by-category-id/{category_id}")
+    public void deleteCategoryAndExpensesByCategoryId(@PathVariable Long category_id) {
+        categoryRepository.deleteCategoryAndExpensesByCategoryId(category_id);
+    }
+
+    @PutMapping("/categories/edit-category-name/{category_id}")
+    public void editCategoryName(@PathVariable Long category_id, @RequestBody String category_name) {
+        categoryRepository.updateCategoryNameByCategoryId(category_id, category_name);
     }
 }

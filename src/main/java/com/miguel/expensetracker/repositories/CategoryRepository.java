@@ -1,6 +1,7 @@
 package com.miguel.expensetracker.repositories;
 
 import com.miguel.expensetracker.models.Category;
+import org.springframework.jdbc.IncorrectResultSetColumnCountException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -49,5 +50,20 @@ public class CategoryRepository {
         String name = jdbcTemplate.queryForObject(SQL, String.class, categoryId);
 
         return name;
+    }
+
+    public void deleteCategoryAndExpensesByCategoryId(Long category_id) {
+        String categoryDeleteSQL = "DELETE FROM categories WHERE id = ?";
+        String expenseDeleteSQL = "DELETE FROM expenses WHERE category_id = ?";
+
+        jdbcTemplate.update(expenseDeleteSQL, category_id);
+        jdbcTemplate.update(categoryDeleteSQL, category_id);
+    }
+
+    public void updateCategoryNameByCategoryId(Long categoryId, String categoryName) {
+
+        String SQL = "UPDATE categories SET name = ? WHERE id = ?";
+
+        jdbcTemplate.update(SQL, categoryName, categoryId);
     }
 }
