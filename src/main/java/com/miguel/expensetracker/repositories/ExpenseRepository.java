@@ -7,7 +7,9 @@ import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Locale;
 
 @Repository
 public class ExpenseRepository {
@@ -119,5 +121,16 @@ public class ExpenseRepository {
         """;
 
         jdbcTemplate.update(SQL, expense.title, expense.amount, expense.description, expense.expense_data, expense.category_id, expense.id);
+    }
+
+    public String getFormattedExpenseDateByExpenseId(Long expense_id) {
+        String SQL = "SELECT expense_data FROM expenses WHERE id = ?";
+        LocalDate localDate = jdbcTemplate.queryForObject(SQL, LocalDate.class, expense_id);
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy MMM dd", Locale.ENGLISH);
+
+        String formattedDate = localDate.format(formatter);
+
+        return formattedDate;
     }
 }

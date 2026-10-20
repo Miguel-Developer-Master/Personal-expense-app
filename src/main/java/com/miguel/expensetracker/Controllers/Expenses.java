@@ -65,4 +65,9 @@ public class Expenses {
     public void updateExpenseById(@RequestBody Expense expense) {
         expenseRepository.updateExpenseById(expense);
     }
+
+    @GetMapping("/expenses/get-formatted-expense-date-by-id/{id}")
+    public String getFormattedExpenseDateById(@PathVariable Long id) {
+        return expenseRepository.getFormattedExpenseDateByExpenseId(id);
+    }
 }
