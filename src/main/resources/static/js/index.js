@@ -132,6 +132,13 @@ async function showExpensesOnScreen() {
         const categoryName = await response.text();
 
 
+        //getting formatted data based on expense id
+        const dateResponse = await fetch(`/expenses/get-formatted-expense-date-by-id/${expense.id}`);
+        const date = await dateResponse.text();
+
+        const expenseDateCell = document.createElement("td");
+        expenseDateCell.textContent = date;
+
         const expenseNameCell = document.createElement("td");
         expenseNameCell.textContent = `${expense.title}`;
 
@@ -161,6 +168,7 @@ async function showExpensesOnScreen() {
         expenseActionsCell.append(expenseEditButton);
         expenseActionsCell.append(expenseDeleteButton);
 
+        newCell.append(expenseDateCell);
         newCell.append(expenseNameCell);
         newCell.append(categoryNameCell);
         newCell.append(expenseAmountCell);
