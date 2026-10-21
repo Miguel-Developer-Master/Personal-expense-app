@@ -1,6 +1,6 @@
 html {
-    background-color: #252525;
-    color: #A0A0A0;
+    background-color: #000000;
+    color: #FFFFFF;
 }
 
 header {
@@ -9,28 +9,60 @@ header {
     margin: auto;
 }
 
+label {
+    margin: auto;
+}
+
 fieldset {
     display: grid;
     margin: auto;
+    row-gap: 10px;
     width: 50%;
-    border: 1px solid black;
+    height: 25em;
+    border: 1px solid #14213D;
     border-radius: 10px;
 }
 
+
+#category-name {
+    justify-self: center;
+    width: 70%;
+    outline: none;
+    border: 1px solid #E5E5E5;
+    border-radius: 10px;
+    padding: 2px;
+    background: none;
+    color: #E5E5E5;
+    font-size: 125%;
+    transform: scale(1);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+#category-name:focus {
+    outline: none;
+    border: 1px solid #FCA311;
+    color: #FCA311;
+    transform: scale(1.1);
+}
+
 #finish-form {
+    justify-self: center;
+    width: 75%;
     border: none;
     outline: none;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-top: 5%;
-    background-color: #606060;
+    background-color: #E5E5E5;
     transform: scale(1);
-    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
-    color: #252525;
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, font-size 0.3s ease;
+    color: #000000;
+    padding: 0;
+    font-size: 150%;
 }
 
 #finish-form:hover {
-    background-color: #A0A0A0;
-    color: #303030;
+    background-color: #14213D;
+    color: #FCA311;
+    font-size: 165%;
     transform: scale(1.01);
 }
 

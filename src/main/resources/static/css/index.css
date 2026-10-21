@@ -1,8 +1,9 @@
-html {
-    background-color: #C0C0C0;
-    color: #101010;
-}
 
+
+html {
+    background-color: #000000;
+    color: #E5E5E5;
+}
 body {
     margin: 0;
 }
@@ -12,7 +13,8 @@ footer {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #A0A0A0;
+    background-color: #14213D;
+    color: #FCA311;
     width: 100%;
 }
 
@@ -114,6 +116,10 @@ footer {
     justify-content: space-between;
 }
 
+#categories-div {
+    color: #FCA311;
+}
+
 .category-info {
     display: flex;
     align-content: center;
@@ -190,4 +196,8 @@ footer {
 
 #expenses-table td {
     padding: 12px;
+}
+
+#table-body {
+    color: #FCA311;
 }
