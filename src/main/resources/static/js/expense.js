@@ -1,4 +1,5 @@
 import {changePage} from "./utils/changePage.js";
+import {isValidDate} from "./utils/validDate.js";
 
 const mainForm = document.querySelector("#expense-form");
 
@@ -18,14 +19,7 @@ async function putCategoriesIntoSelect() {
     }
 }
 
-function isValidDate(date) {
-    if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) {
-        return false;
-    }
-    const parsedDate = new Date(`${date}T00:00:00.000Z`);
 
-    return (Number.isFinite(parsedDate.getTime()) && parsedDate.toISOString().startsWith(date));
-}
 
 async function createExpense(event) {
     event.preventDefault();
@@ -60,7 +54,7 @@ async function createExpense(event) {
     } else if (select.value === "") {
 
         console.log("5");
-        description.placeholder = "Please select a valid amount";
+        description.placeholder = "Please select a valid category";
         select.textContent = "";
 
     } else {

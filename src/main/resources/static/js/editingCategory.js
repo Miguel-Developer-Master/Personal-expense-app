@@ -21,11 +21,15 @@ async function editCategory() {
     const param = new URLSearchParams(window.location.search);
     const id = param.get("id");
 
-    await fetch(`/categories/edit-category-name/${id}`, {
-        method: "PUT",
-        headers: {"Content-Type": "text/plain"},
-        body: mainTitle.value
-    });
+    if(mainTitle.value.trim() !== "") {
+        await fetch(`/categories/edit-category-name/${id}`, {
+            method: "PUT",
+            headers: {"Content-Type": "text/plain"},
+            body: mainTitle.value
+        });
+
+    }
+
 }
 
 button.addEventListener("click", async () => {

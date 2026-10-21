@@ -1,4 +1,5 @@
 import {changePage} from "./utils/changePage.js";
+import {isValidDate} from "./utils/validDate.js";
 
 const expenseName = document.getElementById("expense-name");
 const expenseAmount = document.getElementById("expense-amount");
@@ -41,21 +42,27 @@ await showingExpense();
 
 async function updateExpense() {
 
-    const newExpense = {
-        id: id,
-        title: expenseName.value,
-        amount: expenseAmount.value,
-        description: expenseDescription.value,
-        expense_data: expenseDate.value,
-        category_id: expenseCategorySelect.value
-    }
+    if(
+        expenseName.value.trim() === "" ||
+        expenseAmount.value.trim() === "" ||
+        (expenseDate.value.trim() === "" || isValidDate(expenseDate.value))
+    ) {
+
+        const newExpense = {
+            id: id,
+            title: expenseName.value,
+            amount: expenseAmount.value,
+            description: expenseDescription.value,
+            expense_data: expenseDate.value,
+            category_id: expenseCategorySelect.value
+        }
 
     await fetch(`/expenses/update-expense-by-id`, {
         method: 'PUT',
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(newExpense)
     });
-
+    }
 }
 
 const form = document.querySelector("#edit-expense-form");
