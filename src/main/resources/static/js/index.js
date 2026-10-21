@@ -77,12 +77,12 @@ async function showCategoriesOnScreen() {
         const categoryEditButton = document.createElement("button");
         categoryEditButton.classList.add("edit-category");
         categoryEditButton.classList.add("buttons");
-        categoryEditButton.innerHTML =  `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m16 4 4 4"/><path d="M3 21l4.5-1 12-12a2.12 2.12 0 0 0-3-3l-12 12L3 21z"/></svg>`
+        categoryEditButton.innerHTML =  `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FCA311" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m16 4 4 4"/><path d="M3 21l4.5-1 12-12a2.12 2.12 0 0 0-3-3l-12 12L3 21z"/></svg>`
 
         const categoryDeleteButton = document.createElement("button");
         categoryDeleteButton.classList.add("delete-category");
         categoryDeleteButton.classList.add("buttons");
-        categoryDeleteButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg>`
+        categoryDeleteButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FCA311" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg>`
 
         categoryActionDiv.append(categoryEditButton);
         categoryActionDiv.append(categoryDeleteButton);
@@ -157,12 +157,12 @@ async function showExpensesOnScreen() {
         const expenseEditButton = document.createElement("button");
         expenseEditButton.classList.add("edit-expense-button");
         expenseEditButton.classList.add("buttons");
-        expenseEditButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m16 4 4 4"/><path d="M3 21l4.5-1 12-12a2.12 2.12 0 0 0-3-3l-12 12L3 21z"/></svg>`;
+        expenseEditButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FCA311" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m16 4 4 4"/><path d="M3 21l4.5-1 12-12a2.12 2.12 0 0 0-3-3l-12 12L3 21z"/></svg>`;
 
         const expenseDeleteButton = document.createElement("button");
         expenseDeleteButton.classList.add("delete-expense-button");
         expenseDeleteButton.classList.add("buttons");
-        expenseDeleteButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg>`;
+        expenseDeleteButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FCA311" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg>`;
 
         //appending everything
         expenseActionsCell.append(expenseEditButton);
