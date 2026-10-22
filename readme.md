@@ -5,7 +5,7 @@ This project is an expense tracker app, with it, you can add categories like:
 And then, add an expense like "today lunch" with today's date.<br>
 The program has an interactive dashboard that shows how much you spent this month, how much you
 already spent and how much expenses you have. <br>
-It also has a complete CRUD for tasks and categories.
+It also has a complete CRUD for expenses and categories.
 
 ## Technical Part
 
@@ -99,15 +99,15 @@ jdbc:postgresql://localhost:LOCAL_PORT/DB_NAME
 replace LOCAL_PORT with your port, you didn't change it, just put 5432, and replace DB_NAME with your DataBase name.<br>
 On the second line, replace the camp after the "=" sign with:
 ```
-YOUR_DB_NAME
+LOGIN_ROLE
 ```
 
-Replacing with your DataBase name. Now, on the third line change the camp after the "=" with this:
+Replacing with your login role name. Now, on the third line change the camp after the "=" with this:
 ```
 YOUR_PASSWORD
 ```
 
-And replace with your password.<br>
+And replace with your login role password.<br>
 The project is ready, skip for the last step.
 
 ## Linux
@@ -130,7 +130,7 @@ sudo apt update
 
 It'll ask your password, put it, and run. Now:
 ```
-sudo apt install opendjdk-21-jdk
+sudo apt install openjdk-21-jdk
 ```
 
 Java is installed now, you can check it with:
@@ -243,7 +243,7 @@ Now, the database is configured.
 
 Now, go to application.properties (src/main/resources) and replace the camp "your_database_url" with:
 ```
-jdbd:postgresql://localhost:YOUR_PORT/DB_NAME
+jdbc:postgresql://localhost:YOUR_PORT/DB_NAME
 ```
 Replacing YOUR_PORT for your PostgreSQL port (if you didn't change it, it's 5432),
 and DB_NAME with your database name.
